@@ -18,15 +18,23 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
 .header-sub{font-size:11px;color:#55C8E8;letter-spacing:0.5px}
 .header-title{font-size:28px;color:#fff;font-weight:900;line-height:1.15;margin-bottom:6px}
 .header-week{font-size:15px;color:#A8D0E6;font-weight:600}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2;justify-content:center}
-.info-item{flex:1;min-width:200px;padding:16px 20px;border-right:1px solid #E8DDD2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2;justify-content:center;position:relative;z-index:10;overflow:visible}
+.info-item{flex:1;min-width:200px;padding:16px 20px;border-right:1px solid #E8DDD2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;overflow:visible}
 .info-item:last-child{border-right:none}
 .info-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .info-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.5px;font-weight:700}
 .info-value{font-size:15px;color:#1B4332;font-weight:800;line-height:1.2}
 .info-detail{font-size:11px;color:#5A4D3E;line-height:1.3}
 .std-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:4px}
-.std-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#E8F5E9;border:1.5px solid #A5D6A7;color:#2E7D32}
+.std-tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.3px;position:relative;cursor:help;transition:transform 0.15s,box-shadow 0.15s}
+.std-tag:hover{transform:scale(1.08);box-shadow:0 2px 8px rgba(0,0,0,0.12)}
+.std-tag .std-tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);width:220px;background:#1B4332;color:#fff;font-size:12px;font-weight:600;line-height:1.45;padding:10px 14px;border-radius:12px;text-align:center;letter-spacing:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s,visibility 0.2s,transform 0.2s;z-index:100;box-shadow:0 4px 16px rgba(0,0,0,0.2)}
+.std-tag .std-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1B4332}
+.std-tag:hover .std-tooltip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(-2px)}
+.std-tag .std-tooltip .std-code{display:block;color:#95D5B2;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-weight:800}
+.std-tag:nth-child(8n+1){background:#FCE4EC;border:1.5px solid #F48FB1;color:#C2185B}
+.std-tag:nth-child(8n+2){background:#E8F5E9;border:1.5px solid #A5D6A7;color:#2E7D32}
+.std-tag:nth-child(8n+3){background:#E1F5FE;border:1.5px solid #81D4FA;color:#0277BD}
 .content{padding:24px 28px 36px}
 .art-divider{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 0 18px;font-size:22px;opacity:0.6}
 .card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(27,67,50,0.04);transition:box-shadow 0.2s}
@@ -307,11 +315,11 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
   <div class="info-item">
     <div class="info-icon" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);"><span class="bounce-emoji">📋</span></div>
     <div class="info-label">Standards</div>
-    <div class="std-row"><span class="std-tag">VA.K.S.2.1<span class="std-tooltip"><span class="std-code">VA.K.S.2.1</span>Use accurate art vocabulary to discuss works of art and art processes.</span></span><span class="std-tag">VA.K.S.3.1<span class="std-tooltip"><span class="std-code">VA.K.S.3.1</span>Use materials, tools, and techniques appropriately in the visual arts.</span></span> <span class="std-tag">VA.K.O.2.1<span class="std-tooltip"><span class="std-code">VA.K.O.2.1</span>Use personal experience and knowledge to create a work of art.</span></span></div>
+    <div class="std-row"><span class="std-tag">VA.K.S.2.1<span class="std-tooltip"><span class="std-code">VA.K.S.2.1</span>Use accurate art vocabulary to discuss works of art and art processes.</span></span> <span class="std-tag">VA.K.S.3.1<span class="std-tooltip"><span class="std-code">VA.K.S.3.1</span>Use materials, tools, and techniques appropriately in the visual arts.</span></span> <span class="std-tag">VA.K.O.2.1<span class="std-tooltip"><span class="std-code">VA.K.O.2.1</span>Use personal experience and knowledge to create a work of art.</span></span></div>
   </div>
 </div>
 <div class="content">
-  <div class="art-divider"><span class="bounce-emoji">🍂</span> <span class="bounce-emoji">🌿</span> <span class="bounce-emoji">🪨</span> <span class="bounce-emoji">🎨</span> <span class="bounce-emoji">🖌️</span> <span class="bounce-emoji">🌱</span> <span class="bounce-emoji">⭐</span></div>
+  <div class="art-divider"><span class="bounce-emoji">🎨</span> <span class="bounce-emoji">🖌️</span> <span class="bounce-emoji">🖼️</span> <span class="bounce-emoji">🎨</span> <span class="bounce-emoji">🖌️</span> <span class="bounce-emoji">📦</span> <span class="bounce-emoji">⭐</span></div>
 
   <div class="two-col">
     <div class="card theme-forest">
@@ -335,6 +343,9 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
         <div><div class="card-head-label">Objectives</div><div class="card-head-title">I Can Statements</div></div>
       </div>
       <div class="card-body">
+        <div class="ican-item"><div class="ican-num" style="background:linear-gradient(135deg,#FF7043,#FF8A65);">1</div><div class="ican-text"><strong>I can</strong> make lines to create artwork.</div></div>
+        <div class="ican-item"><div class="ican-num" style="background:linear-gradient(135deg,#7E57C2,#9575CD);">2</div><div class="ican-text"><strong>I can</strong> name &amp; make different types of lines.</div></div>
+        <div class="ican-item"><div class="ican-num" style="background:linear-gradient(135deg,#26A69A,#4DB6AC);">3</div><div class="ican-text"><strong>I can</strong> tell why I used certain materials.</div></div>
       </div>
     </div>
   </div>
@@ -381,22 +392,17 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
     <div class="card-body">
       <div class="reflection-box">
         <span style="font-size:32px;flex-shrink:0;">✏️</span>
-        <div class="ref-text">How does making a 2D picture differ from making a 3D project?<br>My favorite part of building my name was ____________________________.</div>
+        <div class="ref-text">How does making a 2D picture differ from making a 3D project?</div>
       </div>
     </div>
   </div>
 
   <div class="alert-box">
     <span style="font-size:28px;flex-shrink:0;margin-top:2px;">📣</span>
-    <p>All On Demand Students can join FIRST GRADE Live Art class from 11:10&ndash;11:30 on Wednesdays &amp; Thursdays to earn participation credit!</p>
+    <p>All On Demand Students can join Live Art class from 11:10&ndash;11:30 on Wednesdays &amp; Thursdays to earn participation credit.</p>
   </div>
 
-  <div style="border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;background:linear-gradient(135deg,#E1F5FE,#B3E5FC);border:2px solid #81D4FA">
-    <span style="font-size:28px;flex-shrink:0;margin-top:2px">📢</span>
-    <p style="font-size:16px;color:#2B1D12;line-height:1.65;margin:0"><strong>Live Art Class:</strong> All On Demand students can join Live Art class from 11:10&ndash;11:30 on Wednesdays &amp; Thursdays to earn participation credit.</p>
-  </div>
-
-  <div class="art-divider" style="padding:4px 0 0;"><span class="bounce-emoji">🍂</span> <span class="bounce-emoji">🪨</span> <span class="bounce-emoji">🌿</span></div>
+  <div class="art-divider" style="padding:4px 0 0;"><span class="bounce-emoji">🎨</span> <span class="bounce-emoji">🖼️</span> <span class="bounce-emoji">🖌️</span></div>
 </div>
 <div class="paint-border"></div>
 <div class="footer">&copy; 2025 Optima Academy Online &middot; <a href="https://www.optimaed.com" target="_blank">optimaed.com</a></div>

@@ -18,8 +18,8 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
 .header-sub{font-size:11px;color:#55C8E8;letter-spacing:0.5px}
 .header-title{font-size:28px;color:#fff;font-weight:900;line-height:1.15;margin-bottom:6px}
 .header-week{font-size:15px;color:#A8D0E6;font-weight:600}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2;justify-content:center}
-.info-item{flex:1;min-width:200px;padding:16px 20px;border-right:1px solid #E8DDD2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2;justify-content:center;position:relative;z-index:10;overflow:visible}
+.info-item{flex:1;min-width:200px;padding:16px 20px;border-right:1px solid #E8DDD2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;overflow:visible}
 .info-item:last-child{border-right:none}
 .info-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 .info-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.5px;font-weight:700}
@@ -307,7 +307,7 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
   <div class="info-item">
     <div class="info-icon" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);"><span class="bounce-emoji">📋</span></div>
     <div class="info-label">Standards</div>
-    <div class="std-row"><span class="std-tag">VA.K.C.1.1</span><span class="std-tag">VA.K.F.1.1</span></div>
+    <div class="std-row"><span class="std-tag">VA.K.C.1.1<span class="std-tooltip"><span class="std-code">VA.K.C.1.1</span>Create art to tell a story about a personal experience.</span></span><span class="std-tag">VA.K.F.1.1<span class="std-tooltip"><span class="std-code">VA.K.F.1.1</span>Identify the use of art in everyday life.</span></span></div>
   </div>
 </div>
 <div class="content">
